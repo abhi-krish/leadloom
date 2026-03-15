@@ -19,11 +19,24 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | Turn missed calls into booked customers`,
     description: siteConfig.description,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1152,
+        height: 768,
+        alt: `${siteConfig.name} social preview`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | Turn missed calls into booked customers`,
     description: siteConfig.description,
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
