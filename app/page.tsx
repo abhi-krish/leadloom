@@ -1,12 +1,12 @@
 import { ButtonLink } from "@/components/button-link";
 import { InfoCard } from "@/components/info-card";
 import { Section } from "@/components/section";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/lib/site";
 
 const calendlyUrl = siteConfig.calendlyUrl;
-const contactEmail = siteConfig.contactEmail;
-const privacyHref = "/privacy";
-const termsHref = "/terms";
+const pricingHref = "/pricing";
 
 const trustPoints = [
   "Instant SMS follow-up",
@@ -81,25 +81,7 @@ const benefits = [
 export default function HomePage() {
   return (
     <>
-      <header className="border-b border-line/70 bg-white">
-        <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5 lg:px-8">
-          <LinkLogo />
-          <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
-            <a className="text-sm text-slate hover:text-ink" href="#how-it-works">
-              How it works
-            </a>
-            <a className="text-sm text-slate hover:text-ink" href="#industries">
-              Industries
-            </a>
-            <a className="text-sm text-slate hover:text-ink" href="#why-leadloom">
-              Why LeadLoom
-            </a>
-          </nav>
-          <ButtonLink href={calendlyUrl} external>
-            Book a Demo
-          </ButtonLink>
-        </div>
-      </header>
+      <SiteHeader currentPath="/" />
 
       <main>
         <section className="bg-white py-16 sm:py-20 lg:py-24">
@@ -120,8 +102,8 @@ export default function HomePage() {
                 <ButtonLink href={calendlyUrl} external>
                   Book a Demo
                 </ButtonLink>
-                <ButtonLink href="#how-it-works" variant="secondary">
-                  See How It Works
+                <ButtonLink href={pricingHref} variant="secondary">
+                  See Pricing
                 </ButtonLink>
               </div>
               <ul className="mt-8 flex flex-col gap-3 text-sm text-slate sm:flex-row sm:flex-wrap sm:gap-6">
@@ -237,6 +219,46 @@ export default function HomePage() {
           </div>
         </Section>
 
+        <Section
+          eyebrow="Pricing"
+          title="Clear plans for buyers who want to understand cost before they talk"
+          description="Use pricing to self-qualify, then choose whether to book a demo or start setup."
+          tone="muted"
+        >
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-4xl border border-line bg-white p-8 shadow-panel">
+              <h3 className="text-2xl font-semibold tracking-tight text-ink">
+                Demo-led, but not opaque
+              </h3>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-slate">
+                The best fit for local service businesses is a hybrid motion: visible
+                pricing for serious buyers, plus a short onboarding step so setup is
+                correct from day one.
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <ButtonLink href={pricingHref}>View Pricing</ButtonLink>
+                <ButtonLink href={calendlyUrl} variant="secondary" external>
+                  Book a Demo
+                </ButtonLink>
+              </div>
+            </div>
+
+            <article className="rounded-4xl border border-line bg-ink p-8 text-white shadow-panel">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">
+                Best Next Step
+              </p>
+              <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+                Show pricing now, keep purchase simple later
+              </h3>
+              <p className="mt-4 text-base leading-7 text-slate-200">
+                As onboarding becomes more automated, this can evolve into a fuller
+                self-serve checkout. Right now, pricing transparency plus guided setup
+                is the stronger launch posture.
+              </p>
+            </article>
+          </div>
+        </Section>
+
         <section id="book-demo" className="py-20 sm:py-24">
           <div className="mx-auto max-w-content px-6 lg:px-8">
             <div className="rounded-4xl border border-line bg-ink px-8 py-12 text-white shadow-panel sm:px-12">
@@ -254,8 +276,8 @@ export default function HomePage() {
                 <ButtonLink href={calendlyUrl} external>
                   Book a Demo
                 </ButtonLink>
-                <ButtonLink href="#how-it-works" variant="secondary">
-                  See How It Works
+                <ButtonLink href={pricingHref} variant="secondary">
+                  View Pricing
                 </ButtonLink>
               </div>
             </div>
@@ -263,32 +285,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="border-t border-line bg-white">
-        <div className="mx-auto flex max-w-content flex-col gap-6 px-6 py-8 text-sm text-slate sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <div>
-            <p className="font-semibold text-ink">LeadLoom</p>
-            <a className="mt-1 inline-block hover:text-ink" href={`mailto:${contactEmail}`}>
-              {contactEmail}
-            </a>
-          </div>
-          <nav aria-label="Legal" className="flex gap-6">
-            <a className="hover:text-ink" href={privacyHref}>
-              Privacy
-            </a>
-            <a className="hover:text-ink" href={termsHref}>
-              Terms
-            </a>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
-  );
-}
-
-function LinkLogo() {
-  return (
-    <a className="text-lg font-semibold tracking-tight text-ink" href="#top">
-      {siteConfig.name}
-    </a>
   );
 }
