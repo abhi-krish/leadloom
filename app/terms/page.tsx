@@ -79,21 +79,13 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-ink">Governing Law</h2>
-            <p className="mt-3">
-              These terms are governed by the laws of {legalConfig.jurisdiction},
-              without regard to conflict of law principles.
-            </p>
-          </section>
-
-          <section>
             <h2 className="text-xl font-semibold text-ink">Contact</h2>
             <p className="mt-3">
               Questions about these terms can be sent to{" "}
               <a className="font-medium text-ink underline underline-offset-4" href={`mailto:${legalConfig.contactEmail}`}>
                 {legalConfig.contactEmail}
               </a>
-              . Mailing address: {legalConfig.contactAddress}
+              .
             </p>
           </section>
         </div>

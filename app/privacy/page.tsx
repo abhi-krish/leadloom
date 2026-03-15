@@ -94,7 +94,7 @@ export default function PrivacyPage() {
               <a className="font-medium text-ink underline underline-offset-4" href={`mailto:${legalConfig.contactEmail}`}>
                 {legalConfig.contactEmail}
               </a>
-              . Mailing address: {legalConfig.contactAddress}
+              .
             </p>
           </section>
         </div>

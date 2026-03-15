@@ -13,9 +13,4 @@ export const siteConfig = {
 export const legalConfig = {
   companyName: process.env.NEXT_PUBLIC_COMPANY_NAME ?? "LeadLoom",
   contactEmail: siteConfig.contactEmail,
-  contactAddress:
-    process.env.NEXT_PUBLIC_COMPANY_ADDRESS ??
-    "Business mailing address not yet provided.",
-  jurisdiction:
-    process.env.NEXT_PUBLIC_TERMS_JURISDICTION ?? "the United States",
 } as const;
