@@ -18,6 +18,9 @@ export function SiteFooter() {
           <Link className="hover:text-ink" href="/pricing">
             Pricing
           </Link>
+          <Link className="hover:text-ink" href="/sms-consent">
+            SMS Consent
+          </Link>
           <Link className="hover:text-ink" href="/privacy">
             Privacy
           </Link>
