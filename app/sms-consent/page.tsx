@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function SmsConsentPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader currentPath="/sms-consent" />
       <main className="min-h-screen bg-mist/60 px-6 py-20">
         <div className="mx-auto max-w-3xl rounded-4xl border border-line bg-white p-8 shadow-panel sm:p-12">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
